@@ -15,7 +15,9 @@ let anime = '';
     alert ( "Su nombre es " + nombre + " Y sus animes favoritos son : " + "\n" + anime);
 
 
-/*Este es el cuestionario preguntando si alguno estos personajes es su favorito*/
+/*Este es el cuestionario preguntando si alguno estos personajes es su favorito 
+y dondale una pequeña descripcion del personaje
+*/
 
     let personaje = prompt("Cual es tu personaje favorito Asta, Zenitsu, Tanjiro, Ash, Naruto");
 
@@ -46,7 +48,9 @@ let anime = '';
     }
 
 
-/*esta es la encuesta q realize*/
+/*esta es la encuesta q realize, se q puede haber varias variables pero 
+realice varios intentos para lograr q funcione
+*/
 
 
 let entrada = prompt("Cual es tu personaje favorito Asta, Zenitsu, Tanjiro, Ash, Naruto");
