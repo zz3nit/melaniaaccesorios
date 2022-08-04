@@ -1,0 +1,56 @@
+/*Misc*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+a {
+  text-decoration: none; }
+
+/*Partials*/
+/*Pages*/
+html,
+body {
+  height: 100%;
+  background-image: url(../../public/img/fondo-cartera.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: medium; }
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.form__fondo {
+  background-color: #e0b8f0;
+  border-radius: 10px; }
+
+.form-signin {
+  max-width: 330px;
+  padding: 10px; }
+
+.form-signin .form-floating:focus-within {
+  z-index: 2; }
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0; }
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+
+.btn {
+  background-color: #d498fc;
+  color: white; }
+
+/*Medias*/
