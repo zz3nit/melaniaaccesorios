@@ -20,7 +20,8 @@ body {
   background-image: url(../../public/img/fondo-cartera.png);
   background-repeat: no-repeat;
   background-size: cover;
-  font-size: medium; }
+  font-size: medium;
+  text-align: center; }
 
 body {
   display: flex;
