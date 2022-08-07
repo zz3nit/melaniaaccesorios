@@ -1,9 +1,9 @@
-/* desafio de funciones, condicionales, operadores, ciclos y variables
+/* desafio de funciones, condicionales, operadores, ciclos, variables y funciones de orden superior
 voy a intentar hacer q un usuario se loguee e intente comprar algun producto
-de 3 q va a haber y cuando termine la compra se lo salude!!*/
+de 4 q va a haber y cuando termine la compra se lo salude!!*/
 
-function probarCodigo (){
-
+ function probarCodigo (){
+/*Este es un login simple de usuario*/
 function usuario () {
     let user = prompt ("ingrese su nombre de usuario")
     console.log (user);  
@@ -23,11 +23,15 @@ let persona = usuario ();
 contraseña ();
 alert ("bienvenido querido "  + (persona) + " LE RECORDAMOS PONER LOS NOMBRES CON SUS MAYUSCULAS CORRESPONDIENTES GRACIAS.");
 
+/*cree mi clase para los objetos a agregar en el array
+y agregue un metodo para sumar el IVA a los productos
+*/
 class Producto {
-    constructor (nombre, precio, categoria, descripcion) {
+    constructor (id,nombre, precio, stock, descripcion) {
+        this.id = id,
         this.nombre = nombre,
         this.precio = parseFloat (precio),
-        this.categoria = categoria,
+        this.stock = stock,
         this.descripcion = descripcion;
     
     }
@@ -36,31 +40,72 @@ class Producto {
     }
 
 }
+const producto1 = new Producto (1,"Bandolera Milan", 2500, 10, "Bandolera con correa ajustable, forrada por dentro" );
+const producto2 = new Producto (2,"Mochila California", 3500, 10, "Mochila de cuero, color negro, con doble cierre");
+const producto3= new Producto (3, "Cinto Melania", 1999, 10, "Cinto de cuero, color negro, con detalles metalicos");
+const producto4 = new Producto (4,"Tobillera", 1500, 10, "Tobillera beige, para disfrutar este verano!!" );
 
-const productos = [];
-productos.push (new Producto ("Bandolera Milan", 2500, "Bandoleras", "Bandolera con correa ajustable, forrada por dentro" ));
-productos.push (new Producto ("Mochila California", 3500, "Mochilas", "Mochila de cuero, color negro, con doble cierre" ));
-productos.push (new Producto ("Cinto Melania", 1999, "Cintos", "Cinto de cuero, color negro, con detalles metalicos" ));
-productos.push (new Producto ("Tobillera", 1500, "Accesorios", "Tobillera beige, para disfrutar este verano!!" ));
+const productos = [producto1, producto2, producto3, producto4];
 
 for (const producto of productos) {
     producto.sumarIva();
 }
 
+// const actualizar = productos.map ((el) => { // quise agregar un map aumentando el precio pero me daba como resultado NaN
+//     return {
+//         precio: el.precio * 1.40,        
+//     }
     
-    let realizarCompra = prompt ("Que producto le gustaria comprar \n 1-Bandolera Milan \n-2 Mochila California \n-3 Cinto Melania \n-4 Tobillera");
-    let indice;
-    for (let producto of productos) {
-        if (producto.nombre == realizarCompra){
-            indice = productos.indexOf(producto);
-            console.log (indice);
-            alert( "Elegiste "+ productos[indice].descripcion + ": " + productos[indice].nombre + " su precio es $ " + productos[indice].precio);
-        } 
+// })
+
+// console.log (actualizar);
+
+let carrito = [];
+
+agregarAlCarrito()
+
+function agregarAlCarrito () {
+    let elijeProducto = parseInt(prompt("ingrese el id del producto Bandolera-1, Mochila-2, Cinto-3, Tobillera-4"));
+    let productoAgregar = productos.find((el)=> el.id == elijeProducto)
+    carrito.push(productoAgregar)
+    console.log(carrito);
+    alert ("Compraste " + productoAgregar.nombre + " " +  productoAgregar.descripcion); //forma correcta de devolver el nombre del producto comprado!
+
+    /*dejo comentado esta manera criolla de un mero mortal de como quise resolver esta parte*/
+    // if (elijeProducto == 1 ) {
+    //     alert ("compraste Bandolera Milan");
+    // }
+    // else if ( elijeProducto == 2 )
+    // { 
+    //     alert ("compraste Mochila California");
+
+    // }else if (elijeProducto == 3)
+    // {
+    //     alert ("compraste Cinto MeLania");
+    // }else if (elijeProducto == 4)
+    // {
+    //     alert ("compraste Tobillera ");
+    // }
+
+    actualizarCarrito ();
 
 }
+
+function actualizarCarrito() {
+    console.log ("cantidad de productos agregados " + carrito.length)
+    let suma = carrito.reduce ((acc, el)=> acc + el.precio, 0) // aqui quise aplicar el mapa pero no me funciono!
+    console.log ("La suma de su carrito es $ " + suma);
+    alert("La suma de su carrito es $ " + suma);
+
+}
+
 alert ("Gracias por comprar en MelaniaAccesorios");
 
 }
+
+/*1er entrega del proyecto final*/
+
+
 
 
 
