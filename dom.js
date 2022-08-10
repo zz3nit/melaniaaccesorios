@@ -14,7 +14,8 @@ function verificar()
         {
             let tituloUsuario =document.getElementsByClassName('tituloUsuario');
             for(elementoTitulo of tituloUsuario) {
-                elementoTitulo.innerText =`Bienvenido ${ingreseUsuario}` ;
+                elementoTitulo.innerText =`Bienvenido ${ingreseUsuario}`;
+                document.getElementById('botonCompra').style.display="block";
             }
             mensaje = `Bienvenido ${ingreseUsuario}`;
         }
@@ -40,9 +41,8 @@ function traerUsuariosDeLabase () {
 
 
 }
-function irAComprar () {
-    document.getElementsByClassName('botonCompra').style.display="none";
-}
+
+document.getElementById('botonCompra').style.display="none";
 
 
 class Usuario {
