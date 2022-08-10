@@ -2,7 +2,7 @@
 voy a intentar hacer q un usuario se loguee e intente comprar algun producto
 de 4 q va a haber y cuando termine la compra se lo salude!!*/
 
- function probarCodigo (){
+//  function probarCodigo (){
 /*Este es un login simple de usuario*/
 function usuario () {
     let user = prompt ("ingrese su nombre de usuario")
@@ -51,14 +51,6 @@ for (const producto of productos) {
     producto.sumarIva();
 }
 
-// const actualizar = productos.map ((el) => { // quise agregar un map aumentando el precio pero me daba como resultado NaN
-//     return {
-//         precio: el.precio * 1.40,        
-//     }
-    
-// })
-
-// console.log (actualizar);
 
 let carrito = [];
 
@@ -70,22 +62,6 @@ function agregarAlCarrito () {
     carrito.push(productoAgregar)
     console.log(carrito);
     alert ("Compraste " + productoAgregar.nombre + " " +  productoAgregar.descripcion); //forma correcta de devolver el nombre del producto comprado!
-
-    /*dejo comentado esta manera criolla de un mero mortal de como quise resolver esta parte*/
-    // if (elijeProducto == 1 ) {
-    //     alert ("compraste Bandolera Milan");
-    // }
-    // else if ( elijeProducto == 2 )
-    // { 
-    //     alert ("compraste Mochila California");
-
-    // }else if (elijeProducto == 3)
-    // {
-    //     alert ("compraste Cinto MeLania");
-    // }else if (elijeProducto == 4)
-    // {
-    //     alert ("compraste Tobillera ");
-    // }
 
     actualizarCarrito ();
 
@@ -101,7 +77,7 @@ function actualizarCarrito() {
 
 alert ("Gracias por comprar en MelaniaAccesorios");
 
-}
+// }
 
 /*1er entrega del proyecto final*/
 
