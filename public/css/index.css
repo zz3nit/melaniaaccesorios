@@ -10,29 +10,68 @@ html {
   font-size: 62.5%; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: white; }
 
 /*Partials*/
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 1rem;
+  background-color: #d498fc;
+  align-items: center; }
+  .navbar .nav__img {
+    width: 300px;
+    padding-left: 2rem; }
+  .navbar .container-fluid {
+    display: flex;
+    flex-direction: column-reverse; }
+  .navbar .nav-item {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    align-items: center; }
+  .navbar .nav-link {
+    color: #9e2fe9;
+    padding: 1rem;
+    border-radius: 10px; }
+    .navbar .nav-link:hover {
+      background-color: #9e2fe9;
+      color: aliceblue;
+      transition: 1s; }
+  .navbar .iconify {
+    list-style: none; }
+
 /*Pages*/
 /*codigo de mati para armar un carrito!!*/
+.section__card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 2rem;
+  justify-items: center;
+  gap: 1rem; }
+
+.card-img.top {
+  padding: 0.5rem;
+  transition: 1s ease-in-out; }
+  .card-img.top:hover {
+    scale: 1rem; }
+
 html,
-body {
-  height: 100%;
+section {
+  height: 75%;
   background-image: url(../../public/img/fondo-cartera.png);
   background-repeat: no-repeat;
   background-size: cover;
   font-size: medium;
   text-align: center; }
 
-body {
-  display: flex;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px; }
+.logo {
+  width: 250px; }
 
-.form__fondo {
+.card-body {
   background-color: #e0b8f0;
-  border-radius: 10px; }
+  border-radius: 5px; }
 
 .form-signin {
   max-width: 330px;
@@ -54,5 +93,10 @@ body {
 .btn {
   background-color: #d498fc;
   color: white; }
+
+a {
+  color: #9e2fe9; }
+  a:hover {
+    color: #7001b9; }
 
 /*Medias*/
