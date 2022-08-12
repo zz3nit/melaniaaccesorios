@@ -2,26 +2,6 @@
 voy a intentar hacer q un usuario se loguee e intente comprar algun producto
 de 4 q va a haber y cuando termine la compra se lo salude!!*/
 
-//  function probarCodigo (){
-/*Este es un login simple de usuario*/
-function usuario () {
-    let user = prompt ("ingrese su nombre de usuario")
-    console.log (user);  
-    return user;
-    
-}
-function contraseña () {
-    let password = parseInt(prompt("ingrese su contraseña en numeros esta vez hasta q aprenda como combinar con letras"));
-        while (isNaN(password)) 
-            {
-            password = parseInt( prompt( "reingrese contraseña"));
-        }
-        console.log (password);
-        return password;
-        }
-let persona = usuario ();
-contraseña ();
-alert ("bienvenido querido "  + (persona) + " LE RECORDAMOS PONER LOS NOMBRES CON SUS MAYUSCULAS CORRESPONDIENTES GRACIAS.");
 
 /*cree mi clase para los objetos a agregar en el array
 y agregue un metodo para sumar el IVA a los productos
@@ -40,6 +20,7 @@ class Producto {
     }
 
 }
+
 const producto1 = new Producto (1,"Bandolera Milan", 2500, 10, "Bandolera con correa ajustable, forrada por dentro" );
 const producto2 = new Producto (2,"Mochila California", 3500, 10, "Mochila de cuero, color negro, con doble cierre");
 const producto3= new Producto (3, "Cinto Melania", 1999, 10, "Cinto de cuero, color negro, con detalles metalicos");

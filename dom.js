@@ -1,4 +1,20 @@
 let ingreseUsuario;
+let botonIngresoCompra = document.getElementById('botonCompra').style.visibility="hidden";
+let botonVerificar = document.getElementById('boton-verificar');
+
+let funcionIngresar = addEventListener('keypress', teclaEnter); 
+botonVerificar.addEventListener('click', verificar);
+
+const tecla = {
+    ENTER: 13
+}
+
+
+function teclaEnter (){
+    if (tecla.ENTER) {
+        verificar();
+    }
+}
 
 function verificar() 
 {
@@ -15,9 +31,9 @@ function verificar()
             let tituloUsuario =document.getElementsByClassName('tituloUsuario');
             for(elementoTitulo of tituloUsuario) {
                 elementoTitulo.innerText =`Bienvenido ${ingreseUsuario}`;
-                document.getElementById('botonCompra').style.display="block";
+                document.getElementById('botonCompra').style.visibility="visible";
             }
-            mensaje = `Bienvenido ${ingreseUsuario}`;
+            mensaje = "Inicio de sesion exitoso";
         }
         else
         {
@@ -41,9 +57,6 @@ function traerUsuariosDeLabase () {
 
 
 }
-
-document.getElementById('botonCompra').style.display="none";
-
 
 class Usuario {
     constructor (nombre,clave) {
