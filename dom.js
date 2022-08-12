@@ -5,13 +5,12 @@ let botonVerificar = document.getElementById('boton-verificar');
 let funcionIngresar = addEventListener('keypress', teclaEnter); 
 botonVerificar.addEventListener('click', verificar);
 
-const tecla = {
-    ENTER: 13
-}
 
 
-function teclaEnter (){
-    if (tecla.ENTER) {
+function teclaEnter (e){
+    console.log(e.key);
+    if (e.key == 'Enter') {
+        console.log('ok')
         verificar();
     }
 }
