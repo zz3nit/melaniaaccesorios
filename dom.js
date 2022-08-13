@@ -6,7 +6,6 @@ let funcionIngresar = addEventListener('keypress', teclaEnter);
 botonVerificar.addEventListener('click', verificar);
 
 
-
 function teclaEnter (e){
     console.log(e.key);
     if (e.key == 'Enter') {

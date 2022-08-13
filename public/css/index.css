@@ -17,7 +17,7 @@ a {
 .navbar {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   padding: 1rem;
   background-color: #d498fc;
   align-items: center; }
@@ -26,7 +26,8 @@ a {
     padding-left: 2rem; }
   .navbar .container-fluid {
     display: flex;
-    flex-direction: column-reverse; }
+    flex-direction: row;
+    justify-content: space-between; }
   .navbar .nav-item {
     font-size: 1.5rem;
     padding: 1.5rem;
@@ -42,14 +43,45 @@ a {
   .navbar .iconify {
     list-style: none; }
 
+/*FOOTER*/
+footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: #2f2f2f;
+  height: 10vh;
+  align-items: center; }
+  footer .footer__info {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: 500;
+    margin: 0;
+    font-size: large;
+    padding: 0.5rem; }
+  footer .footer__logo {
+    width: 7vh;
+    font-size: 1.1em;
+    background-attachment: fixed;
+    background-color: #ddd;
+    border: 3px solid #e006ce;
+    border-radius: 7vh;
+    box-shadow: 0 0 20px #e006ce; }
+
 /*Pages*/
 /*codigo de mati para armar un carrito!!*/
+/*PRODUCTOS*/
+.main__card {
+  background-image: url(../../public/img/fondo-cartera.png); }
+
+.form-control {
+  width: 50%;
+  margin: auto; }
+
 .section__card {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding-top: 2rem;
   justify-items: center;
-  gap: 1rem; }
+  gap: 2rem; }
 
 .card-img.top {
   padding: 0.5rem;
@@ -58,7 +90,7 @@ a {
     scale: 1rem; }
 
 html,
-section {
+main {
   height: 75%;
   background-image: url(../../public/img/fondo-cartera.png);
   background-repeat: no-repeat;
@@ -100,3 +132,42 @@ a {
     color: #7001b9; }
 
 /*Medias*/
+/*medias*/
+@media screen and (max-width: 999px) {
+  .main__card {
+    background-image: url(../../public/img/fondo-cartera.png); }
+  .form-control {
+    width: 50%;
+    margin: auto; }
+  .section__card {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    justify-items: center;
+    gap: 1rem;
+    padding: 1rem; }
+  .card-img.top {
+    padding: 0.5rem;
+    transition: 1s ease-in-out; }
+    .card-img.top:hover {
+      scale: 1rem; } }
+
+/*FOOTER*/
+footer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  height: 15vh; }
+
+footer .footer__info {
+  display: flex;
+  Font-size: medium; }
+
+footer .footer__logo {
+  width: 5vh;
+  font-size: 0.5em;
+  background-attachment: fixed;
+  background-color: #ddd;
+  border: 3px solid #e006ce;
+  border-radius: 7vh;
+  box-shadow: 0 0 20px #e006ce; }
