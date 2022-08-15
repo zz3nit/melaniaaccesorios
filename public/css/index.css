@@ -17,6 +17,7 @@ i {
   text-decoration: none; }
 
 /*Partials*/
+/*HEADER*/
 .navbar {
   display: flex;
   flex-direction: row;
@@ -45,7 +46,7 @@ i {
       transition: 1s; }
   .navbar .iconify {
     list-style: none; }
-  .navbar .btn .btn__menu {
+  .navbar .btn-menu {
     display: flex;
     position: relative;
     margin-right: 300px; }
@@ -95,7 +96,7 @@ footer {
   font-weight: 700; }
 
 i {
-  width: 50px;
+  font-size: x-large;
   color: blueviolet; }
 
 .productoCarrito {
@@ -103,6 +104,17 @@ i {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center; }
+
+#contador-items {
+  font-size: x-large;
+  color: blueviolet; }
+
+.boton-eliminar {
+  border: none; }
+
+.fa-trash-alt:before {
+  color: crimson;
+  border: none; }
 
 html,
 main {
@@ -172,15 +184,17 @@ a {
   .navbar {
     display: flex;
     flex-direction: column;
+    align-content: center;
     gap: 1rem;
     padding: 1rem;
-    background-color: #d498fc;
-    align-items: center; }
+    background-color: #d498fc; }
   .navbar .nav__img {
-    width: 250px;
-    padding-left: 2rem; }
-  .navbar .btn .btn__menu {
-    display: flex; }
+    width: 250px; }
+  .navbar .btn-menu {
+    display: flex;
+    margin-left: 50px;
+    position: fixed;
+    z-index: 1000; }
   /*FOOTER*/
   footer {
     display: flex;

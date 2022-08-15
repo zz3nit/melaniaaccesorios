@@ -3,9 +3,13 @@ let carritoDeCompras = [];
 const contenedorProductos = document.getElementById('contenedor-productos');
 const contenedorCarrito = document.getElementById ('carrito-contenedor');
 
-console.log (productos)
+const contadorCarrito = document.getElementById ('contador-items');
+const precioFinal = document.getElementById ('precio-total');
+
 
 mostrarProductos(productos);
+
+/*funcion para crear las cards de productos*/
 
 function mostrarProductos (productos) {
     contenedorProductos.innerHTML = ''
@@ -34,37 +38,49 @@ function mostrarProductos (productos) {
     });
 
 }
-
+/*funcion para q se agreguen los productos en el carrito*/
 function agregarCarrito (id) {
     let agregarItem = productos.find(items => items.id == id)
     carritoDeCompras.push(agregarItem);
     mostrarCarrito(agregarItem);
-
+    actualizarCarrito();
 }
 
 
 
-
+/*funcion para q aparezcan los productos en el carrito*/
 function mostrarCarrito (agregarItem) {
     let div = document.createElement ('div')
     div.className = 'productoCarrito'
     div.innerHTML = `<p>${agregarItem.nombre}</p>
-                    <p> $${agregarItem.precio} </p>
+                    <p>$${agregarItem.precio}</p>
                     <button class="boton-eliminar">
                     <i class="fas fa-trash-alt"></i>
                     </button>`
 contenedorCarrito.appendChild(div)
-
+eliminar();
 
 }
 
 
 function eliminar () {
+    let btnEliminar = document.getElementsByClassName('boton-eliminar');
+    for (boton of btnEliminar) {
+        boton.addEventListener ('click', (e) => {
+        boton.parentElement.remove();
+        carritoDeCompras = carritoDeCompras.filter (items => items.id != e.target.parentElement.id)
+        actualizarCarrito();
+        
+        })
+    }
+    }
+    
 
 
-}
 
 function actualizarCarrito () {
+    contadorCarrito.innerText = carritoDeCompras.length
+    precioFinal.innerText = carritoDeCompras.reduce ((acc, el) => acc + el.precio, 0);
 
 }
 

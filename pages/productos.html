@@ -35,7 +35,7 @@
           </div>
         </div>
         <button type="button" class="btn btn-menu" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span>
+          <i class="fas fa-shopping-cart"></i><span class="contador-carro" id="contador-items">0</span>
         </button>
       </nav> 
     </header>
@@ -67,15 +67,9 @@
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
       </div>
-      <div id="carrito-contenedor" class="modal-body">
-        <!-- <div class="productoCarrito"> -->
-          <!-- <p>Buzo 1</p>
-          <p>Precio: $1200</p>
-          <button class="boton-eliminar">
-            <i class="fas fa-trash-alt"></i>
-          </button> -->
-      </div>
+      <div id="carrito-contenedor" class="modal-body"></div>
       <div class="modal-footer">
+        <p class="precioProducto">Precio Total : $<span id="precio-total"></span></p>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
