@@ -30,7 +30,7 @@ i {
   .navbar .container-fluid {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; }
+    justify-content: space-around; }
   .navbar .nav-item {
     font-size: 1.5rem;
     padding: 1.5rem;
@@ -45,6 +45,10 @@ i {
       transition: 1s; }
   .navbar .iconify {
     list-style: none; }
+  .navbar .btn, .navbar btn__menu {
+    display: flex;
+    position: relative;
+    margin-right: 300px; }
 
 /*FOOTER*/
 footer {
@@ -93,6 +97,12 @@ footer {
 i {
   width: 50px;
   color: blueviolet; }
+
+.productoCarrito {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; }
 
 html,
 main {
@@ -156,6 +166,23 @@ a {
     transition: 1s ease-in-out; }
     .card-img.top:hover {
       scale: 1rem; } }
+
+/*Header*/
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #d498fc;
+  align-items: center; }
+
+.nav__img {
+  width: 250px;
+  padding-left: 1rem; }
+
+.btn, btn__menu {
+  display: flex;
+  justify-content: center;
+  margin: 1rem; }
 
 /*FOOTER*/
 footer {
