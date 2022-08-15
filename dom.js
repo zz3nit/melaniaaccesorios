@@ -26,7 +26,7 @@ function verificar()
     {
         if (usuarioRetornado.clave==claveingresada) 
         {
-            let tituloUsuario =document.getElementsByClassName('tituloUsuario');
+            let tituloUsuario = document.getElementsByClassName('tituloUsuario');
             for(elementoTitulo of tituloUsuario) {
                 elementoTitulo.innerText =`Bienvenido ${ingreseUsuario}`;
                 document.getElementById('botonCompra').style.visibility="visible";

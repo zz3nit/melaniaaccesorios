@@ -1,66 +1,72 @@
-/* desafio de funciones, condicionales, operadores, ciclos, variables y funciones de orden superior
-voy a intentar hacer q un usuario se loguee e intente comprar algun producto
-de 4 q va a haber y cuando termine la compra se lo salude!!*/
+let carritoDeCompras = [];
 
+const contenedorProductos = document.getElementById('contenedor-productos');
+const contenedorCarrito = document.getElementById ('carrito-contenedor');
 
-/*cree mi clase para los objetos a agregar en el array
-y agregue un metodo para sumar el IVA a los productos
-*/
-// class Producto {
-//     constructor (id,nombre, precio, stock, descripcion) {
-//         this.id = id,
-//         this.nombre = nombre,
-//         this.precio = parseFloat (precio),
-//         this.stock = stock,
-//         this.descripcion = descripcion;
+console.log (productos)
+
+mostrarProductos(productos);
+
+function mostrarProductos (productos) {
+    contenedorProductos.innerHTML = ''
+    productos.forEach(items => {
     
-//     }
-//     sumarIva () {
-//         this.precio = this.precio * 1.21;
-//     }
-
-// }
-
-
-
-
-// for (const producto of productos) {
-//     producto.sumarIva();
-// }
-
-
-// let carrito = [];
-
-// agregarAlCarrito()
-
-// function agregarAlCarrito () {
-//     let elijeProducto = parseInt(prompt("ingrese el id del producto Bandolera-1, Mochila-2, Cinto-3, Tobillera-4"));
-//     let productoAgregar = productos.find((el)=> el.id == elijeProducto)
-//     carrito.push(productoAgregar)
-//     console.log(carrito);
-//     alert ("Compraste " + productoAgregar.nombre + " " +  productoAgregar.descripcion); //forma correcta de devolver el nombre del producto comprado!
-
-//     actualizarCarrito ();
-
-// }
-
-// function actualizarCarrito() {
-//     console.log ("cantidad de productos agregados " + carrito.length)
-//     let suma = carrito.reduce ((acc, el)=> acc + el.precio, 0) // aqui quise aplicar el mapa pero no me funciono!
-//     console.log ("La suma de su carrito es $ " + suma);
-//     alert("La suma de su carrito es $ " + suma);
-
-// }
-
-// alert ("Gracias por comprar en MelaniaAccesorios");
-
-// }
-
-/*1er entrega del proyecto final*/
+    let div = document.createElement ('div')
+    div.className = 'producto'
     
+    div.innerHTML =`<div class="card producto" style="width: 18rem;">
+                        <img src="${items.img}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">${items.nombre}</h5>
+                            <p class="card-text">${items.descripcion}</p>
+                            <span><p class="card-precio"> $${items.precio} </p></span>
+                            <a id="botonCompra ${items.id}"
+                            class="btn"><i class="fas fa-shopping-cart"></i></a>
+                    `
+    contenedorProductos.appendChild(div);
+
+    let agregarProducto = document.getElementById(`botonCompra ${items.id}`)
+    agregarProducto.addEventListener('click', () => {
+        agregarCarrito(items.id)
+        
+    })
+
+    });
+
+}
+
+function agregarCarrito (id) {
+    let agregarItem = productos.find(items => items.id == id)
+    carritoDeCompras.push(agregarItem);
+    mostrarCarrito(agregarItem);
+
+}
 
 
 
+
+function mostrarCarrito (agregarItem) {
+    let div = document.createElement ('div')
+    div.className = 'productoCarrito'
+    div.innerHTML = `<p>${agregarItem.nombre}</p>
+                    <p> $${agregarItem.precio} </p>
+                    <button class="boton-eliminar">
+                    <i class="fas fa-trash-alt"></i>
+                    </button>`
+contenedorCarrito.appendChild(div)
+
+
+}
+
+
+function eliminar () {
+
+
+}
+
+function actualizarCarrito () {
+
+}
 
 
 

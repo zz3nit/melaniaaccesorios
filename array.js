@@ -60,5 +60,5 @@ const productos = [{
     precio: 1000,
     stock: 10,
     descripcion:"Gorrito azul para este verano",
-    img:"../public/img/gorrito-azul.png"},
+    img:"../public/img/gorrito-azul.png",}
 ];

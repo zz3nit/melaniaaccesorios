@@ -13,6 +13,9 @@ a {
   text-decoration: none;
   color: white; }
 
+i {
+  text-decoration: none; }
+
 /*Partials*/
 .navbar {
   display: flex;
@@ -81,13 +84,15 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   padding-top: 2rem;
   justify-items: center;
-  gap: 2rem; }
+  gap: 1rem;
+  padding-bottom: 1rem; }
 
-.card-img.top {
-  padding: 0.5rem;
-  transition: 1s ease-in-out; }
-  .card-img.top:hover {
-    scale: 1rem; }
+.card-precio {
+  font-weight: 700; }
+
+i {
+  width: 50px;
+  color: blueviolet; }
 
 html,
 main {
