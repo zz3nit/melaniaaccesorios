@@ -1,5 +1,4 @@
 let ingreseUsuario;
-let botonIngresoCompra = document.getElementById('botonCompra').style.visibility="hidden";
 let botonVerificar = document.getElementById('boton-verificar');
 
 let funcionIngresar = addEventListener('keypress', teclaEnter); 
@@ -29,9 +28,9 @@ function verificar()
             let tituloUsuario = document.getElementsByClassName('tituloUsuario');
             for(elementoTitulo of tituloUsuario) {
                 elementoTitulo.innerText =`Bienvenido ${ingreseUsuario}`;
-                document.getElementById('botonCompra').style.visibility="visible";
             }
             mensaje = "Inicio de sesion exitoso";
+            location.href = 'http://127.0.0.1:5500/pages/productos.html'
         }
         else
         {
