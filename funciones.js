@@ -6,11 +6,12 @@ const contenedorCarrito = document.getElementById ('carrito-contenedor');
 const contadorCarrito = document.getElementById ('contador-items');
 const precioFinal = document.getElementById ('precio-total');
 
+/*funcion global para guardar info*/
+const guardarDatos = (clave, valor) => localStorage.setItem (clave, valor);
 
 mostrarProductos(productos);
 
 /*funcion para crear las cards de productos*/
-
 function mostrarProductos (productos) {
     contenedorProductos.innerHTML = ''
     productos.forEach(items => {
@@ -32,10 +33,11 @@ function mostrarProductos (productos) {
     let agregarProducto = document.getElementById(`botonCompra ${items.id}`)
     agregarProducto.addEventListener('click', () => {
         agregarCarrito(items.id)
-        
+    
     })
 
-    });
+});
+
 
 }
 /*funcion para q se agreguen los productos en el carrito*/
@@ -51,10 +53,11 @@ function agregarCarrito (id) {
         carritoDeCompras.push(agregarItem);
         mostrarCarrito(agregarItem);
         actualizarCarrito();
+        
     }
+    guardarDatos ("listaCompra", JSON.stringify(carritoDeCompras));/*funcion de guardar datos en el local*/
+
 }
-
-
 
 /*funcion para q aparezcan los productos en el carrito*/
 function mostrarCarrito (agregarItem) {
@@ -69,35 +72,20 @@ function mostrarCarrito (agregarItem) {
 contenedorCarrito.appendChild(div)
 
 let btnEliminar = document.getElementById(`eliminar ${agregarItem.id}`);
-    btnEliminar.addEventListener ('click', () => {
-        if (agregarItem.cantidad == 1){
-            carritoDeCompras = carritoDeCompras.filter(items => items.id !== agregarItem.id)
-    btnEliminar.parentElement.remove()
-    actualizarCarrito();
-        }else {
-            agregarItem.cantidad = agregarItem.cantidad - 1;
-            document.getElementById(`cant${agregarItem.id}`).innerHTML = `<p id="cant${agregarItem.id}">cantidad: ${agregarItem.cantidad}</p>`
-            actualizarCarrito()
-        }
-    
-    })
-}
-
-
-
-
-
-function eliminar () {
-    // let btnEliminar = document.getElementById(`eliminar ${agregarItem.id}`);
-    // for (boton of btnEliminar) {
-    //     boton.addEventListener ('click', (e) => {
-    //     console.log(agregarItem.id);
-        
-    //     })
-    // }
-
+btnEliminar.addEventListener ('click', () => {
+    if (agregarItem.cantidad == 1){
+        carritoDeCompras = carritoDeCompras.filter(items => items.id !== agregarItem.id)
+btnEliminar.parentElement.remove()
+actualizarCarrito();
+    }else {
+        agregarItem.cantidad = agregarItem.cantidad - 1;
+        document.getElementById(`cant${agregarItem.id}`).innerHTML = `<p id="cant${agregarItem.id}">cantidad: ${agregarItem.cantidad}</p>`
+        actualizarCarrito()
     }
-    
+    guardarDatos ("listaCompra", JSON.stringify(carritoDeCompras));/*la llamo nuevamente para q se actualice el carrito si eliminan y refreszcan*/
+})
+
+}
 
 
 
@@ -106,6 +94,18 @@ function actualizarCarrito () {
     precioFinal.innerText = carritoDeCompras.reduce ((acc, el) => acc + (el.precio * el.cantidad), 0);
     
 }
+
+function recuperarDatos () { /*funcion q permite traer los objetos del localStorage*/
+    let productoRecuperado = JSON.parse (localStorage.getItem("listaCompra"))
+    productoRecuperado.forEach (produc=> {
+        mostrarCarrito(produc)
+        carritoDeCompras.push(produc)
+        actualizarCarrito();
+    })
+    
+}
+
+recuperarDatos(); 
 
 
 

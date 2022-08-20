@@ -100,10 +100,13 @@ i {
   color: blueviolet; }
 
 .productoCarrito {
-  display: flex;
-  flex-wrap: wrap;
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  align-items: baseline;
+  color: #48b648; }
 
 #contador-items {
   font-size: x-large;
@@ -115,6 +118,15 @@ i {
 .fa-trash-alt:before {
   color: crimson;
   border: none; }
+
+.btn__compra {
+  background-color: #0bc20b;
+  padding: 7px;
+  border: none;
+  border-radius: 5px; }
+  .btn__compra:hover {
+    border: solid 1px #112211;
+    transition: 1s ease; }
 
 html,
 main {
@@ -165,7 +177,7 @@ a {
     background-image: url(../../public/img/fondo-cartera.png); }
   .form-control {
     width: 50%;
-    margin: auto; }
+    margin: 0 auto; }
   .section__card {
     display: flex;
     flex-wrap: wrap;
