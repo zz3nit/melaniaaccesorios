@@ -130,7 +130,7 @@ i {
 
 html,
 main {
-  height: 75%;
+  height: 100%;
   background-image: url(../../public/img/fondo-cartera.png);
   background-repeat: no-repeat;
   background-size: cover;
