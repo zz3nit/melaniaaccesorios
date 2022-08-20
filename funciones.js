@@ -6,7 +6,6 @@ const contenedorCarrito = document.getElementById ('carrito-contenedor');
 const contadorCarrito = document.getElementById ('contador-items');
 const precioFinal = document.getElementById ('precio-total');
 
-/*funcion global para guardar info*/
 const guardarDatos = (clave, valor) => localStorage.setItem (clave, valor);
 
 mostrarProductos(productos);

@@ -1,6 +1,7 @@
 let ingreseUsuario;
 let botonVerificar = document.getElementById('boton-verificar');
 
+
 let funcionIngresar = addEventListener('keypress', teclaEnter); 
 botonVerificar.addEventListener('click', verificar);
 
