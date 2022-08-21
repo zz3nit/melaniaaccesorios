@@ -5,10 +5,11 @@ const contenedorCarrito = document.getElementById ('carrito-contenedor');
 
 const contadorCarrito = document.getElementById ('contador-items');
 const precioFinal = document.getElementById ('precio-total');
-
+document.getElementById('btnRealizarCompra').style.display="none"
 const guardarDatos = (clave, valor) => localStorage.setItem (clave, valor);
 
 mostrarProductos(productos);
+
 
 /*funcion para crear las cards de productos*/
 function mostrarProductos (productos) {
@@ -45,13 +46,16 @@ function agregarCarrito (id) {
     if (existencia){
         existencia.cantidad = existencia.cantidad + 1;
         document.getElementById(`cant${existencia.id}`).innerHTML = `<p id="cant${existencia.id}">cantidad: ${existencia.cantidad}</p>`
+        location.href = 'http://127.0.0.1:5500/pages/carrito.html'
         actualizarCarrito()
     }else {
         let agregarItem = productos.find(items => items.id == id)
         agregarItem.cantidad = 1
         carritoDeCompras.push(agregarItem);
         mostrarCarrito(agregarItem);
+        document.getElementById('btnRealizarCompra').style.display="block"
         actualizarCarrito();
+        
         
     }
     guardarDatos ("listaCompra", JSON.stringify(carritoDeCompras));/*funcion de guardar datos en el local*/
@@ -70,6 +74,7 @@ function mostrarCarrito (agregarItem) {
                     </button>`
 contenedorCarrito.appendChild(div)
 
+
 let btnEliminar = document.getElementById(`eliminar ${agregarItem.id}`);
 btnEliminar.addEventListener ('click', () => {
     if (agregarItem.cantidad == 1){
@@ -79,6 +84,7 @@ actualizarCarrito();
     }else {
         agregarItem.cantidad = agregarItem.cantidad - 1;
         document.getElementById(`cant${agregarItem.id}`).innerHTML = `<p id="cant${agregarItem.id}">cantidad: ${agregarItem.cantidad}</p>`
+        document.getElementById('btnRealizarCompra').style.display="none"
         actualizarCarrito()
     }
     guardarDatos ("listaCompra", JSON.stringify(carritoDeCompras));/*la llamo nuevamente para q se actualice el carrito si eliminan y refreszcan*/
