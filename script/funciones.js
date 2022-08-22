@@ -7,7 +7,7 @@ const btnComprar = document.getElementById ('btnRealizarCompra')
 btnComprar.addEventListener('click', realizarCompra)
 
 
-document.getElementById ('btnRealizarCompra').style.display ="none"
+
 const guardarDatos = (clave, valor) => localStorage.setItem (clave, valor);/*variable para agregar en el storage*/
 
 mostrarProductos(productos);

@@ -1,80 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/df59baf6b8.js"crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="../public/css/index.css">
     <title>MelaniaAccesorios</title>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg">
-        <picture>
-            <img class="nav__img" src="../public/img/logo melania.png" alt="">
+            <picture>
+                <img class="nav__img" src="../public/img/logo melania.png" alt="">
             </picture>
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-around" id="navbarText">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button type="button" class="btn btn-menu" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fas fa-shopping-cart"></i><span class="contador-carro" id="contador-items">0</span>
             </button>
-            <div class="collapse navbar-collapse justify-content-around" id="navbarText">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="../pages/productos.html">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../pages/contacto.html">Contacto</a>
-                </li>
-                </ul>
+        </nav>
+    </header>
+    </header>
+    <main id="contenedor">
+        <section>
+
+            <h1>AHORA TOCA PAGAR</h1>
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#COD</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Precio</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table> -->
+                    <div class="container bg-light d-md-flex align-items-center">
+                        <div class="card box1 shadow-sm p-md-5 p-md-5 p-4">
+                            <div class="fw-bolder mb-4"><span class="fas fa-dollar-sign"></span><span
+                                    class="ps-1">599,00</span></div>
+                            <div class="d-flex flex-column">
+                                <div class="d-flex align-items-center justify-content-between text"> <span
+                                        class="">Commission</span> <span class="fas fa-dollar-sign"><span
+                                            class="ps-1">1.99</span></span> </div>
+                                <div class="d-flex align-items-center justify-content-between text mb-4">
+                                    <span>Total</span> <span class="fas fa-dollar-sign"><span
+                                            class="ps-1">600.99</span></span> </div>
+                                <div class="border-bottom mb-4"></div>
+                                <div class="d-flex flex-column mb-4"> <span class="far fa-file-alt text"><span
+                                            class="ps-2">Invoice ID:</span></span> <span
+                                        class="ps-3">SN8478042099</span> </div>
+                                <div class="d-flex flex-column mb-5"> <span class="far fa-calendar-alt text"><span
+                                            class="ps-2">Next payment:</span></span> <span class="ps-3">22
+                                        july,2018</span> </div>
+                                <div class="d-flex align-items-center justify-content-between text mt-5">
+                                    <div class="d-flex flex-column text"> <span>Customer Support:</span> <span>online
+                                            chat 24/7</span> </div>
+                                    <div class="btn btn-primary rounded-circle"><span class="fas fa-comment-alt"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card box2 shadow-sm">
+                            <div class="d-flex align-items-center justify-content-between p-md-5 p-4"> <span
+                                    class="h5 fw-bold m-0">Payment methods</span>
+                                <div class="btn btn-primary bar"><span class="fas fa-bars"></span></div>
+                            </div>
+                            <ul class="nav nav-tabs mb-3 px-md-4 px-2">
+                                <li class="nav-item"> <a class="nav-link px-2 active" aria-current="page"
+                                        href="#">Credit Card</a> </li>
+                                <li class="nav-item"> <a class="nav-link px-2" href="#">Mobile Payment</a> </li>
+                                <li class="nav-item ms-auto"> <a class="nav-link px-2" href="#">+ More</a> </li>
+                            </ul>
+                            <div class="px-md-5 px-4 mb-4 d-flex align-items-center">
+                                <div class="btn btn-success me-4"><span class="fas fa-plus"></span></div>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"> <input
+                                        type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off"
+                                        checked> <label class="btn btn-outline-primary" for="btnradio1"><span
+                                            class="pe-1">+</span>5949</label> <input type="radio" class="btn-check"
+                                        name="btnradio" id="btnradio2" autocomplete="off"> <label
+                                        class="btn btn-outline-primary" for="btnradio2"><span
+                                            class="lpe-1">+</span>3894</label> </div>
+                            </div>
+                            <form action="">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="d-flex flex-column px-md-5 px-4 mb-4"> <span>Credit Card</span>
+                                            <div class="inputWithIcon"> <input class="form-control" type="text"
+                                                    value="5136 1845 5468 3894"> <span class=""> <img class="img__tarjeta" 
+                                                        src="https://www.freepnglogos.com/uploads/mastercard-png/mastercard-logo-logok-15.png"
+                                                        alt=""></span> </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex flex-column ps-md-5 px-md-0 px-4 mb-4"> <span>Expiration<span
+                                                    class="ps-1">Date</span></span>
+                                            <div class="inputWithIcon"> <input type="text" class="form-control"
+                                                    value="05/20"> <span class="fas fa-calendar-alt"></span> </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex flex-column pe-md-5 px-md-0 px-4 mb-4"> <span>Code CVV</span>
+                                            <div class="inputWithIcon"> <input type="password" class="form-control"
+                                                    value="123"> <span class="fas fa-lock"></span> </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="d-flex flex-column px-md-5 px-4 mb-4"> <span>Name</span>
+                                            <div class="inputWithIcon"> <input class="form-control text-uppercase"
+                                                    type="text" value="valdimir berezovkiy"> <span
+                                                    class="far fa-user"></span> </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 px-md-5 px-4 mt-3">
+                                        <div class="btn btn-primary w-100">Pay $599.00</div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+        </section>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content modal-contenedor">
+                    <div class="modal-header d-flex flex-row-reverse justify-content-between">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
+                    </div>
+                    <div id="carrito-contenedor" class="modal-body"></div>
+                    <div class="modal-footer">
+                        <p class="precioProducto">Precio Total : $<span id="precio-total"></span></p>
+                        <button type="button" id="btnRealizarCompra" class="btn__compra">Realizar Compra</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <button type="button" class="btn btn-menu" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <i class="fas fa-shopping-cart"></i><span class="contador-carro" id="contador-items">0</span>
-        </button>
-        </nav> 
-    </header>
-</header>
-<main class="main__card">
-    <h1>AHORA TOCA PAGAR</h1>
-
-<section id="contenedor-productos" class="section__card">
-
-</section>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-<div class="modal-content modal-contenedor">
-  <div class="modal-header d-flex flex-row-reverse justify-content-between">
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
-  </div>
-  <div id="carrito-contenedor" class="modal-body"></div>
-  <div class="modal-footer">
-    <p class="precioProducto">Precio Total : $<span id="precio-total"></span></p>
-    <button type="button" id="btnRealizarCompra" class="btn__compra">Realizar Compra</button>
-  </div>
-</div>
-</div>
-</div>
-</main>
-<!-- <footer>
+    </main>
+    <!-- <footer>
     <a class="footer__link"  href="./pages/Contacto.html">Contactanos</a>
     <p class="footer__info" >Copyright by Gaston Rodriguez 2022</p>
     <a href=https://www.instagram.com/melania.rafaela_/ title="logo instagram">
       <img class="footer__logo" src="../public/img/instagram.png" alt="logo instagram">
     </a>
   </footer>fin de footer  -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 
 </body>
 <script></script>
-<script src="../array.js" ></script>
-<script src="../funciones.js"></script>
-<script src="../cheackout.js" ></script>
+<script src="../script/array.js"></script>
+<script src="../script/carrito.js"></script>
+<script src="../script/cheackout.js"></script>
+
 </html>

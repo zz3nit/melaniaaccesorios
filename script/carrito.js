@@ -61,8 +61,6 @@ actualizarCarrito();
 
 
 function actualizarCarrito () {
-    contadorCarrito.innerText = carritoDeCompras.reduce ((acc, el) => acc + el.cantidad, 0);
-    precioFinal.innerText = carritoDeCompras.reduce ((acc, el) => acc + (el.precio * el.cantidad), 0);
     if (carritoDeCompras.length > 0){
         document.getElementById ('btnRealizarCompra').style.display ="block"
     } 
@@ -70,6 +68,9 @@ function actualizarCarrito () {
     {
         document.getElementById ('btnRealizarCompra').style.display ="none"
     }
+    contadorCarrito.innerText = carritoDeCompras.reduce ((acc, el) => acc + el.cantidad, 0);
+    precioFinal.innerText = carritoDeCompras.reduce ((acc, el) => acc + (el.precio * el.cantidad), 0);
+   
 }
 
 function realizarCompra () {
@@ -78,11 +79,13 @@ function realizarCompra () {
 
 function recuperarDatos () { /*funcion q permite traer los objetos del localStorage*/
     let productoRecuperado = JSON.parse (localStorage.getItem("listaCompra"))
-    productoRecuperado.forEach (produc=> {
-        mostrarCarrito(produc)
-        carritoDeCompras.push(produc)
-        actualizarCarrito();
+    if (productoRecuperado) {
+        productoRecuperado.forEach (produc=> {
+            mostrarCarrito(produc)
+            carritoDeCompras.push(produc)
+            actualizarCarrito();
     })
+    }
     
 }
 
