@@ -173,17 +173,10 @@ a {
 
 /*Carrito*/
 main .main__card {
-  background-image: url(../../public/img/fondo-cartera.png);
-  background-size: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
+  background-image: url(../../public/img/fondo-cartera.png); }
 
 .container {
-  margin: 20px auto;
-  width: 800px;
-  padding: 30px; }
+  margin: 0 auto; }
 
 .card.box1 {
   width: 350px;
