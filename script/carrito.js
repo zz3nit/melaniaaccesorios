@@ -52,7 +52,6 @@ actualizarCarrito();
         agregarItem.cantidad = agregarItem.cantidad - 1;
         document.getElementById(`cant${agregarItem.id}`).innerHTML = `<p id="cant${agregarItem.id}">cantidad: ${agregarItem.cantidad}</p>`
         actualizarCarrito()
-        
     }
     guardarDatos ("listaCompra", JSON.stringify(carritoDeCompras));/*la llamo nuevamente para q se actualice el carrito si eliminan y refreszcan*/
 })

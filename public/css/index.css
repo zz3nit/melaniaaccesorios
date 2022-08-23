@@ -175,20 +175,23 @@ a {
 main .main__card {
   background-image: url(../../public/img/fondo-cartera.png); }
 
-.container {
-  margin: 0 auto; }
-
-.card.box1 {
-  width: 350px;
-  height: 500px;
+.itemsEnTarjeta {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 34%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   background-color: #3ecc6d;
-  color: #baf0c3;
-  border-radius: 0; }
+  align-items: center; }
+
+.boton-eliminar {
+  background: none; }
 
 .card.box2 {
   width: 450px;
   height: 580px;
   background-color: #ffffff;
+  margin: 0 auto;
   border-radius: 0; }
 
 .text {
