@@ -4,6 +4,9 @@ console.log(listaObj)
 let tarjetaBody = document.getElementById ('tarjeta-body')
 console.log(tarjetaBody);
 
+const precioTotal = document.querySelector('#precio-final')
+
+
 
 listaObj.forEach(itemCarrito => {
     console.log(itemCarrito)
@@ -16,11 +19,13 @@ listaObj.forEach(itemCarrito => {
                         <div class="row"><b>$${itemCarrito.precio}</b></div>
                         <div class="row text-muted">${itemCarrito.nombre}</div>
                         <div class="row">Cant: ${itemCarrito.cantidad}</div>
-                        <button class="boton-eliminar" id="eliminar ${itemCarrito.id}">
-                        <i class="fas fa-trash-alt"></i>
-                        </div>
                         <hr>` 
     tarjetaBody.appendChild(div);
 
-    
+    function precioFinal () {
+        precioTotal.innerText = carritoDeCompras.reduce ((acc, el) => acc + (el.precio * el.cantidad), 0)
+    }
+    precioFinal();
 });
+
+

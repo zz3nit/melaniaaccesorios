@@ -108,7 +108,7 @@ i {
   justify-content: space-between;
   align-items: center;
   align-items: baseline;
-  color: #48b648; }
+  color: blue; }
 
 #contador-items {
   font-size: x-large;
@@ -122,7 +122,7 @@ i {
   border: none; }
 
 .btn__compra {
-  background-color: #0bc20b;
+  background-color: lightblue;
   padding: 7px;
   border: none;
   border-radius: 5px;

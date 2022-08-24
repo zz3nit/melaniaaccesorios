@@ -15,7 +15,7 @@ const precioFinal = document.getElementById ('precio-total');
 function agregarCarrito (id) {
     let existencia = carritoDeCompras.find(produc => produc.id == id)
     if (existencia){
-        existencia.cantidad = existencia.cantidad + 1;
+        existencia.cantidad ++;
         document.getElementById(`cant${existencia.id}`).innerHTML = `<p id="cant${existencia.id}">cantidad: ${existencia.cantidad}</p>`
         actualizarCarrito()
     }else {
