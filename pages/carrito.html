@@ -42,124 +42,92 @@
     </header>
     </header>
     <main id="contenedor">
-        <section>
-
-            <!-- <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#COD</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Descripcion</th>
-                        <th scope="col">Precio</th>
-                    </tr>
-                </thead>
-                <tbody id="table-body"> -->
-                    <!-- <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table> -->
-      <section></section>  
-                    <div id="tarjeta-body" class="container justify-content-center align-items-center mb-2">
-                        <div class="p-md-2 p-md-3 p-2">
-                            <!-- <div class="fw-bolder mb-4"><span class="fas fa-dollar-sign"></span><span
-                                    class="ps-1">599,00</span></div>
-                                <div class="d-flex flex-column">
-                                <div class="d-flex align-items-center justify-content-between text"> <span
-                                        class="">Commission</span> <span class="fas fa-dollar-sign"><span
-                                            class="ps-1">1.99</span></span> </div>
-                                <div class="d-flex align-items-center justify-content-between text mb-4">
-                                    <span>Total</span> <span class="fas fa-dollar-sign"><span
-                                            class="ps-1">600.99</span></span> </div>
-                                <div class="border-bottom mb-4"></div>
-                                <div class="d-flex flex-column mb-4"> <span class="far fa-file-alt text"><span
-                                            class="ps-2">Invoice ID:</span></span> <span
-                                        class="ps-3">SN8478042099</span> </div>
-                                <div class="d-flex flex-column mb-5"> <span class="far fa-calendar-alt text"><span
-                                            class="ps-2">Next payment:</span></span> <span class="ps-3">22
-                                        july,2018</span> </div>
-                                <div class="d-flex align-items-center justify-content-between text mt-5">
-                                    <div class="d-flex flex-column text"> <span>Customer Support:</span> <span>online
-                                            chat 24/7</span> </div>
-                                    <div class="btn btn-primary rounded-circle"><span class="fas fa-comment-alt"></span>
-                                    </div>
-                                </div>
-                            </div> -->
-                        </div>
-                    </section>
-                        <div class="card box2 shadow-sm">
-                            <div class="d-flex align-items-center justify-content-between p-md-5 p-4"> <span
-                                    class="h5 fw-bold m-0">Metodo De Pago</span>
-                                <div class="btn btn-primary bar"><span class="fas fa-bars"></span></div>
-                            </div>
-                            <ul class="nav nav-tabs mb-3 px-md-4 px-2">
-                                <li class="nav-item"> <a class="nav-link px-2 active" aria-current="page"
-                                        href="#">Tarjeta Credito</a> </li>
-                                <li class="nav-item"> <a class="nav-link px-2" href="#">Tarjeta Devito</a> </li>
-                                <li class="nav-item ms-auto"> <a class="nav-link px-2" href="#">Efectivo</a> </li>
-                            </ul>
-                            <div class="px-md-5 px-4 mb-4 d-flex align-items-center">
-                                <div class="btn btn-success me-4"><span class="fas fa-plus"></span></div>
-                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"> <input
-                                        type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off"
-                                        checked> <label class="btn btn-outline-primary" for="btnradio1"><span
-                                            class="pe-1">+</span>5949</label> <input type="radio" class="btn-check"
-                                        name="btnradio" id="btnradio2" autocomplete="off"> <label
-                                        class="btn btn-outline-primary" for="btnradio2"><span
-                                            class="lpe-1">+</span>3894</label> </div>
-                            </div>
-                            <form action="">
+        <section> 
+            <div class="card__final">
+                <div class="tarjeta-cuerpo">
+                    <div class="card-top">
+                        <a href="#">Desea volver a Productos</a>
+                        <img src="../public/img/logo melania.png" width="200px" alt="">
+                    </div>
+                    <div class="row upper">
+                        <span><i class="fa fa-check-circle-o"></i> Shopping bag</span>
+                        <span><i class="fa fa-check-circle-o"></i> Order details</span>
+                        <span id="payment"><span id="three">3</span>Payment</span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="left border">
                                 <div class="row">
-                                    <div class="col-12">
-                                        <div class="d-flex flex-column px-md-5 px-4 mb-4"> <span>Tarjeta Credito</span>
-                                            <div class="inputWithIcon"> <input class="form-control" type="text"
-                                                    value="5136 1845 5468 3894"> <span class=""> <img class="img__tarjeta" 
-                                                        src="https://www.freepnglogos.com/uploads/mastercard-png/mastercard-logo-logok-15.png"
-                                                        alt=""></span> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="d-flex flex-column ps-md-5 px-md-0 px-4 mb-4"> <span>Fecha<span
-                                                    class="ps-1">Vencimiento</span></span>
-                                            <div class="inputWithIcon"> <input type="text" class="form-control"
-                                                    value="05/20"> <span class="fas fa-calendar-alt"></span> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="d-flex flex-column pe-md-5 px-md-0 px-4 mb-4"> <span>Codigo CVV</span>
-                                            <div class="inputWithIcon"> <input type="password" class="form-control"
-                                                    value="123"> <span class="fas fa-lock"></span> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="d-flex flex-column px-md-5 px-4 mb-4"> <span>Nombre</span>
-                                            <div class="inputWithIcon"> <input class="form-control text-uppercase"
-                                                    type="text" value="valdimir berezovkiy"> <span
-                                                    class="far fa-user"></span> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 px-md-5 px-4 mt-3">
-                                        <div class="btn btn-primary w-100">0</div>
+                                    <span class="header">Payment</span>
+                                    <div class="icons">
+                                        <img src="https://img.icons8.com/color/48/000000/visa.png"/>
+                                        <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png"/>
+                                        <img src="https://img.icons8.com/color/48/000000/maestro.png"/>
                                     </div>
                                 </div>
-                            </form>
+                                <form>
+                                    <span>Nombre del Titular</span>
+                                    <input placeholder="Linda Williams">
+                                    <span>Numero de Tarjeta</span>
+                                    <input placeholder="0125 6780 4567 9909">
+                                    <div class="row">
+                                        <div class="col-4"><span>Fecha de vencimiento</span>
+                                            <input placeholder="YY/MM">
+                                        </div>
+                                        <div class="col-4"><span>CVV:</span>
+                                            <input id="cvv">
+                                        </div>
+                                    </div>
+                                    <input type="checkbox" id="save_card" class="align-left">
+                                    <label for="save_card">Guardar datos de Tarjeta</label>  
+                                </form>
+                            </div>                        
+                        </div>
+                        <div class="col-md-5">
+                            <div class="right border">
+                                <div  id="tarjeta-body"class="header">Orden de compra</div>
+                                <!-- <div class="row item">
+                                    <div class="col-4 align-self-center"><img class="img-fluid" src="https://i.imgur.com/79M6pU0.png"></div>
+                                    <div class="col-8">
+                                        <div class="row"><b>$ 26.99</b></div>
+                                        <div class="row text-muted">Be Legandary Lipstick-Nude rose</div>
+                                        <div class="row">Qty:1</div>
+                                    </div>
+                                </div>
+                                <div class="row item">
+                                    <div class="col-4 align-self-center"><img class="img-fluid" src="https://i.imgur.com/Ew8NzKr.jpg"></div>
+                                    <div class="col-8">
+                                        <div class="row"><b>$ 19.99</b></div>
+                                        <div class="row text-muted">Be Legandary Lipstick-Sheer Navy Cream</div>
+                                        <div class="row">Qty:1</div>
+                                    </div>
+                                </div>
+                                <hr> -->
+                                <!-- <div class="row lower">
+                                    <div class="col text-left">Subtotal</div>
+                                    <div class="col text-right">$ 46.98</div>
+                                </div>
+                                <div class="row lower">
+                                    <div class="col text-left">Delivery</div>
+                                    <div class="col text-right">Free</div>
+                                </div>
+                                <div class="row lower">
+                                    <div class="col text-left"><b>Total to pay</b></div>
+                                    <div class="col text-right"><b>$ 46.98</b></div>
+                                </div> -->
+                                <div class="row lower">
+                                    <div class="col text-left"><a href="#"><u>Agregar Cupon de descuento</u></a></div>
+                                </div>
+                                <button class="btn__final">Comprar</button>
+                                <p class="text-muted text-center">Gracias por comprar en MelaniaAccesorios</p>
+                            </div>
                         </div>
                     </div>
-
+                </div>
+                
+             <div>
+            </div>
+            </div>
 
         </section>
 
