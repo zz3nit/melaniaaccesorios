@@ -1,8 +1,7 @@
-let listaObj = JSON.parse (localStorage.getItem("listaCompra"));
+let listaObj = JSON.parse (localStorage.getItem("listaCompra")) || [];
 console.log(listaObj)
 
 let tarjetaBody = document.getElementById ('tarjeta-body')
-console.log(tarjetaBody);
 
 const precioTotal = document.querySelector('#precio-final')
 
@@ -22,10 +21,13 @@ listaObj.forEach(itemCarrito => {
                         <hr>` 
     tarjetaBody.appendChild(div);
 
-    function precioFinal () {
-        precioTotal.innerText = carritoDeCompras.reduce ((acc, el) => acc + (el.precio * el.cantidad), 0)
-    }
-    precioFinal();
+    sumaTotal();
+
+    
 });
 
 
+function sumaTotal() {
+    precioTotal.innerText = listaObj.reduce ((acc, el) => acc + el.precio * el.cantidad, 0)
+
+}

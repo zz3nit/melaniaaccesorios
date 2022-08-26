@@ -6,8 +6,7 @@ const contadorCarrito = document.getElementById ('contador-items');
 
 const precioFinal = document.getElementById ('precio-total');
 
-
-
+const botonVaciarCarro = document.querySelector ('#btnVaciarCarrito')
 
 
 
@@ -42,16 +41,18 @@ function mostrarCarrito (agregarItem) {
                     </button>`
 contenedorCarrito.appendChild(div)
 
-let btnEliminar = document.getElementById(`eliminar ${agregarItem.id}`);
+let btnEliminar = document.getElementById(`eliminar ${agregarItem.id}`); //boton q elimina producto uno x uno
 btnEliminar.addEventListener ('click', () => {
     if (agregarItem.cantidad == 1){
         carritoDeCompras = carritoDeCompras.filter(items => items.id !== agregarItem.id)
-btnEliminar.parentElement.remove()
+btnEliminar.parentElement.remove();
 actualizarCarrito();
     }else {
         agregarItem.cantidad = agregarItem.cantidad - 1;
         document.getElementById(`cant${agregarItem.id}`).innerHTML = `<p id="cant${agregarItem.id}">cantidad: ${agregarItem.cantidad}</p>`
-        actualizarCarrito()
+        
+        actualizarCarrito();
+    
     }
     guardarDatos ("listaCompra", JSON.stringify(carritoDeCompras));/*la llamo nuevamente para q se actualice el carrito si eliminan y refreszcan*/
 })
@@ -59,22 +60,29 @@ actualizarCarrito();
 }
 
 
-function actualizarCarrito () {
-    if (carritoDeCompras.length > 0){
-        document.getElementById ('btnRealizarCompra').style.display ="block"
-    } 
-    else 
-    {
-        document.getElementById ('btnRealizarCompra').style.display ="none"
-    }
+function actualizarCarrito () { //funcion para actualizar carrito
+    carritoDeCompras.length > 0 ? document.getElementById ('btnRealizarCompra').style.display = "block" : document.getElementById('btnRealizarCompra').style.display = "none";//ternario
+    carritoDeCompras.length > 0 ? document.getElementById ('btnVaciarCarrito').style.display = "block" : document.getElementById('btnVaciarCarrito').style.display = "none";//ternario
     contadorCarrito.innerText = carritoDeCompras.reduce ((acc, el) => acc + el.cantidad, 0);
     precioFinal.innerText = carritoDeCompras.reduce ((acc, el) => acc + (el.precio * el.cantidad), 0);
-   
 }
 
-function realizarCompra () {
+function realizarCompra () { //boton q redirige a la pagina para finalizar compra o checkout
     location.href = "http://127.0.0.1:5500/pages/carrito.html"
+
 }
+
+function vaciarCarrito () { //funcion para vaciar carrito con un solo boton
+    document.getElementById('carrito-contenedor').innerHTML = ""
+    carritoDeCompras = [];
+    actualizarCarrito();
+    guardarDatos ("listaCompra", JSON.stringify(carritoDeCompras));
+}
+
+
+botonVaciarCarro.addEventListener('click', vaciarCarrito);
+
+
 
 function recuperarDatos () { /*funcion q permite traer los objetos del localStorage*/
     let productoRecuperado = JSON.parse (localStorage.getItem("listaCompra"))

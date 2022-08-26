@@ -261,6 +261,16 @@ input {
 .lower {
   line-height: 2; }
 
+.btn__cancelar {
+  background-color: #bd041d;
+  border-color: #bd0432;
+  color: white;
+  width: 50;
+  font-size: 0.7rem;
+  margin: 1vh 0 0.5vh 0;
+  padding: 0.75vh;
+  border-radius: 0; }
+
 .btn__final {
   background-color: #1704bd;
   border-color: #1704bd;

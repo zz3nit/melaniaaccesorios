@@ -35,9 +35,6 @@
                     </ul>
                 </div>
             </div>
-            <button type="button" class="btn btn-menu" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fas fa-shopping-cart"></i><span class="contador-carro" id="contador-items">0</span>
-            </button>
         </nav>
     </header>
     </header>
@@ -119,7 +116,8 @@
                                 <div class="row lower">
                                     <div class="col text-left"><a href="#"><u>Agregar Cupon de descuento</u></a></div>
                                 </div>
-                                <button class="btn__final">Comprar</button>
+                                <button id="cancelarCompra" class="btn__cancelar">Cancelar Comprar</button>
+                                <button id="realizarCompra" class="btn__final">Comprar</button>
                                 <p class="text-muted text-center">Gracias por comprar en MelaniaAccesorios</p>
                             </div>
                         </div>
@@ -133,8 +131,8 @@
         </section>
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <!-- <div class="modal-dialog">
                 <div class="modal-content modal-contenedor">
                     <div class="modal-header d-flex flex-row-reverse justify-content-between">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -142,13 +140,13 @@
                     </div>
                     <div id="carrito-contenedor" class="modal-body"></div>
                     <div class="modal-footer">
-                        <p class="precioProducto">Precio Total : $<span id="precio-total"></span></p>
-                        <button type="button" id="btnRealizarCompra" class="btn__compra">Realizar Compra</button>
+                        <p><span class="contador-carro" id="contador-total"></span></p>
+                        <p class="precioProducto">Precio Total : $<span id="precio-final"></span></p>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </div> -->
+    <!-- </main> --> -->
     <!-- <footer>
     <a class="footer__link"  href="./pages/Contacto.html">Contactanos</a>
     <p class="footer__info" >Copyright by Gaston Rodriguez 2022</p>

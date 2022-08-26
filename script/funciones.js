@@ -17,27 +17,29 @@ mostrarProductos(productos);
 function mostrarProductos (productos) {
     contenedorProductos.innerHTML = ''
     productos.forEach(items => {
+        const {img, nombre, descripcion, precio, id} = items //desestructuracion de objetos
     
     let div = document.createElement ('div')
     div.className = 'producto'
     
     div.innerHTML =`<div class="card producto" style="width: 18rem;">
-                        <img src="${items.img}" class="card-img-top">
+                        <img src="${img}" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title">${items.nombre}</h5>
-                            <p class="card-text">${items.descripcion}</p>
-                            <span><p class="card-precio"> $${items.precio} </p></span>
-                            <a id="botonCompra ${items.id}"
+                            <h5 class="card-title">${nombre}</h5>
+                            <p class="card-text">${descripcion}</p>
+                            <span><p class="card-precio"> $${precio} </p></span>
+                            <a id="botonCompra ${id}"
                             class="btn"><i class="fas fa-shopping-cart"></i></a>
                     `
     contenedorProductos.appendChild(div);
 
-    let agregarProducto = document.getElementById(`botonCompra ${items.id}`)
+    let agregarProducto = document.getElementById(`botonCompra ${id}`)
     agregarProducto.addEventListener('click', () => {
-        agregarCarrito(items.id)
+        agregarCarrito(id)
+        
     
     })
-
+   
 });
 
 
