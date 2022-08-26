@@ -43,7 +43,7 @@ function verificar()
     {
         mensaje= "Este usuario no existe"    
     }
-    document.getElementById('mensaje').innerText=mensaje;
+    // document.getElementById('mensaje').innerText=mensaje;
 }
 
 function traerUsuariosDeLabase () {

@@ -4,7 +4,8 @@ const contenedorProductos = document.getElementById('contenedor-productos');
 
 
 const btnComprar = document.getElementById ('btnRealizarCompra')
-btnComprar.addEventListener('click', realizarCompra)
+btnComprar.addEventListener('click', realizarCompra);
+
 
 
 
@@ -35,16 +36,23 @@ function mostrarProductos (productos) {
 
     let agregarProducto = document.getElementById(`botonCompra ${id}`)
     agregarProducto.addEventListener('click', () => {
+
+        Toastify({
+            text: "Producto adherido",
+            className: "info",
+            style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+            border: "10px",
+            }
+        }).showToast(btnComprar);
         agregarCarrito(id)
-        
     
     })
+    
    
 });
 
-
 }
-
 
 
 

@@ -31,3 +31,26 @@ function sumaTotal() {
     precioTotal.innerText = listaObj.reduce ((acc, el) => acc + el.precio * el.cantidad, 0)
 
 }
+
+document.querySelector("#cancelarCompra").onclick = () => {
+    
+    Swal.fire({
+        title: 'Quieres cancelar tu compra',
+        text: "No podras revertir esta accion!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Cancelar compra!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+        Swal.fire(
+            'CANCELADA!',
+            'Tu compra ha sido cancelada.',
+            'success')}
+      })
+}
+
+document.querySelector("#realizarCompra").onclick = () => {
+    
+}
