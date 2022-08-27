@@ -5,6 +5,8 @@ let tarjetaBody = document.getElementById ('tarjeta-body')
 
 const precioTotal = document.querySelector('#precio-final')
 
+const listaItems = document.querySelector('#listaItems');
+
 
 
 listaObj.forEach(itemCarrito => {
@@ -12,7 +14,7 @@ listaObj.forEach(itemCarrito => {
     let div = document.createElement ('div')
     div.className = 'compraTarjeta'
 
-    div.innerHTML = `<div class="row item">
+    div.innerHTML = `<div  class="row item">
                         <div class="col-4 align-self-center"><img class="img-fluid" src=" ${itemCarrito.img} "></div>
                         <div class="col-8">
                         <div class="row"><b>$${itemCarrito.precio}</b></div>
@@ -21,13 +23,13 @@ listaObj.forEach(itemCarrito => {
                         <hr>` 
     tarjetaBody.appendChild(div);
 
-    sumaTotal();
-
+    actualizarListaDeCompra ();
+    
     
 });
 
 
-function sumaTotal() {
+function actualizarListaDeCompra () {
     precioTotal.innerText = listaObj.reduce ((acc, el) => acc + el.precio * el.cantidad, 0)
 
 }
@@ -48,9 +50,37 @@ document.querySelector("#cancelarCompra").onclick = () => {
             'CANCELADA!',
             'Tu compra ha sido cancelada.',
             'success')}
-      })
+            vaciarlistaDeCompra ()    
+    })
 }
 
 document.querySelector("#realizarCompra").onclick = () => {
     
+    Swal.fire({
+        title: 'Quieres realizar tu compra',
+        text: "No podras revertir esta accion!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Realizar Compra!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+        Swal.fire(
+            '',
+            'Compra realizada con exito',
+            'success')}
+            vaciarlistaDeCompra ()
+      })
+      
+}   
+
+
+
+function vaciarlistaDeCompra (){
+    document.querySelector('#tarjeta-body').innerHTML = ""
+    listaObj = [];
+    actualizarListaDeCompra();
+    
+
 }
