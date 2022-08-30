@@ -34,6 +34,63 @@
           </div>
         </nav> 
       </header>
+
+    <main>
+
+<img src="../public/img/logo melania.png" alt="">
+<div class="container py-4">
+
+
+  <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+
+    <!-- input nombre -->
+    <div class="mb-3">
+      <label class="form-label" for="name">Nombre</label>
+      <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
+      <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
+    </div>
+
+    <!-- input correo -->
+    <div class="mb-3">
+      <label class="form-label" for="emailAddress">Correo Electronico</label>
+      <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required, email" />
+      <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Email Address is required.</div>
+      <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
+    </div>
+
+    <!--input mensaje -->
+    <div class="mb-3">
+      <label class="form-label" for="message">Mensaje</label>
+      <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
+      <div class="invalid-feedback" data-sb-feedback="message:required">Message is required.</div>
+    </div>
+
+    <!-- mensaje exitoso -->
+    <div class="d-none" id="submitSuccessMessage">
+      <div class="text-center mb-3">Mensaje enviado exitosamente </div>
+    </div>
+
+    <!-- mensaje de error-->
+    <div class="d-none" id="submitErrorMessage">
+      <div class="text-center text-danger mb-3">Error al enviar el mensaje</div>
+    </div>
+
+    <!-- boton del formulario -->
+    <div class="d-grid">
+      <button class="btn btn-primary btn-m w-50 m-auto" id="submitButton" type="submit">Submit</button>
+    </div>
+
+  </form>
+
+</div>
+    </main>
+    <footer>
+      <a class="footer__link"  href="./pages/Contacto.html">Contactanos</a>
+      <p class="footer__info" >Copyright by Gaston Rodriguez 2022</p>
+      <a href="https://www.instagram.com/melania.rafaela_/" title="logo instagram">
+        <img class="footer__logo" src="../public/img/instagram.png" alt="logo instagram">
+      </a>
+    </footer><!--fin de footer--> 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>

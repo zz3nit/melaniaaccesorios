@@ -2,22 +2,34 @@
 
 const contenedorProductos = document.getElementById('contenedor-productos');
 
-
 const btnComprar = document.getElementById ('btnRealizarCompra')
 btnComprar.addEventListener('click', realizarCompra);
 
-
-
+const buscarProductos = document.querySelector ('#buscarProductos');
 
 const guardarDatos = (clave, valor) => localStorage.setItem (clave, valor);/*variable para agregar en el storage*/
 
+
+
+
+/*funcion para buscar productos*/
+buscarProductos.addEventListener('input', () => {
+    const productoEncontrado = productos.filter( ({nombre}) => {
+        return nombre.toUpperCase().includes(buscarProductos.value.toUpperCase())
+    });
+    mostrarProductos(productoEncontrado);
+})
+
+
 mostrarProductos(productos);
+
+
 
 
 /*funcion para crear las cards de productos*/
 function mostrarProductos (productos) {
     contenedorProductos.innerHTML = ''
-    productos.forEach(items => {
+        productos.forEach(items => {
         const {img, nombre, descripcion, precio, id} = items //desestructuracion de objetos
     
     let div = document.createElement ('div')

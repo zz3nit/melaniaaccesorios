@@ -25,8 +25,8 @@ listaObj.forEach(itemCarrito => {
 
     actualizarListaDeCompra ();
     
-    
 });
+
 
 
 function actualizarListaDeCompra () {
@@ -35,6 +35,8 @@ function actualizarListaDeCompra () {
 }
 
 document.querySelector("#cancelarCompra").onclick = () => {
+
+
     
     Swal.fire({
         title: 'Quieres cancelar tu compra',
@@ -49,12 +51,20 @@ document.querySelector("#cancelarCompra").onclick = () => {
         Swal.fire(
             'CANCELADA!',
             'Tu compra ha sido cancelada.',
-            'success')}
-            vaciarlistaDeCompra ()    
+            'success')
+            vaciarlistaDeCompra ()
+            setTimeout(()=>{
+                location.href = "http://127.0.0.1:5500/pages/productos.html";
+            }, 3000);
+        }  
     })
 }
 
+
+
 document.querySelector("#realizarCompra").onclick = () => {
+
+
     
     Swal.fire({
         title: 'Quieres realizar tu compra',
@@ -68,19 +78,24 @@ document.querySelector("#realizarCompra").onclick = () => {
         if (result.isConfirmed) {
         Swal.fire(
             '',
-            'Compra realizada con exito',
-            'success')}
+            'Gracias por comprar en MelaniaAccesorios',
+            'success')
             vaciarlistaDeCompra ()
-      })
-      
-}   
 
+            setTimeout(()=>{
+                location.href = "http://127.0.0.1:5500/pages/productos.html";
+            }, 3000);
+        
+        }
+    })   
+    
+}   
 
 
 function vaciarlistaDeCompra (){
     document.querySelector('#tarjeta-body').innerHTML = ""
     listaObj = [];
     actualizarListaDeCompra();
-    
+    localStorage.clear ();
 
 }

@@ -58,6 +58,7 @@ footer {
   display: flex;
   justify-content: space-around;
   background-color: #2f2f2f;
+  position: sticky;
   height: 10vh;
   align-items: center; }
   footer .footer__info {

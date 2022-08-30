@@ -6,7 +6,8 @@ const contadorCarrito = document.getElementById ('contador-items');
 
 const precioFinal = document.getElementById ('precio-total');
 
-const botonVaciarCarro = document.querySelector ('#btnVaciarCarrito')
+const botonVaciarCarro = document.querySelector ('#btnVaciarCarrito');
+
 
 
 
