@@ -31,7 +31,7 @@ function verificar()
                 elementoTitulo.innerText =`Bienvenido ${ingreseUsuario}`;
             }
             mensaje = "Inicio de sesion exitoso";
-            location.href = 'http://127.0.0.1:5500/pages/productos.html'
+            location.href = '../pages/productos.html'
             
         }
         else

@@ -54,7 +54,7 @@ document.querySelector("#cancelarCompra").onclick = () => {
             'success')
             vaciarlistaDeCompra ()
             setTimeout(()=>{
-                location.href = "http://127.0.0.1:5500/pages/productos.html";
+                location.href = "./productos.html";
             }, 3000);
         }  
     })
@@ -83,7 +83,7 @@ document.querySelector("#realizarCompra").onclick = () => {
             vaciarlistaDeCompra ()
 
             setTimeout(()=>{
-                location.href = "http://127.0.0.1:5500/pages/productos.html";
+                location.href = "./productos.html";
             }, 3000);
         
         }

@@ -69,7 +69,7 @@ function actualizarCarrito () { //funcion para actualizar carrito
 }
 
 function realizarCompra () { //boton q redirige a la pagina para finalizar compra o checkout
-    location.href = "http://127.0.0.1:5500/pages/carrito.html"
+    location.href = "./carrito.html"
 
 }
 
