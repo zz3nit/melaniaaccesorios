@@ -1,7 +1,7 @@
-
+let productos = []
 
 const contenedorProductos = document.getElementById('contenedor-productos');
-
+const seccionError = document.querySelector('.seccionError');
 const btnComprar = document.getElementById ('btnRealizarCompra')
 btnComprar.addEventListener('click', realizarCompra);
 
@@ -20,8 +20,27 @@ buscarProductos.addEventListener('input', () => {
     mostrarProductos(productoEncontrado);
 })
 
+const pantallaError = () => {
+    return ` <div class="paginaError">
+                <img src="https://i0.wp.com/www.silocreativo.com/wp-content/uploads/2018/10/error-404-animacion.gif?resize=799%2C406&quality=100&strip=all&ssl=1 width="100%" height="600px" heith alt="">
+                </div>`
 
-mostrarProductos(productos);
+}
+
+
+
+fetch('../script/productos.json')
+.then((response) => response.json())
+.then((data)=>{
+    productos = data
+    mostrarProductos(productos);
+})
+.catch ((error)=>{
+    seccionError.innerHTML = pantallaError();
+    console.log("Disculpe los inconvenientes, ya estamos solucionando los problemas", error);
+})
+
+
 
 
 

@@ -31,8 +31,11 @@ function verificar()
                 elementoTitulo.innerText =`Bienvenido ${ingreseUsuario}`;
             }
             mensaje = "Inicio de sesion exitoso";
+            let loading = document.querySelector('#loading');
+            loading.innerHTML = `<img width="250px" src="https://img.pikbest.com/png-images/20190918/cartoon-snail-loading-loading-gif-animation_2734139.png!bw340">`
+            setTimeout(()=>{
             location.href = '../pages/productos.html'
-            
+        },3000);
         }
         else
         {

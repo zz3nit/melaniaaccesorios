@@ -174,6 +174,9 @@ a {
   a:hover {
     color: #7001b9; }
 
+.img__loading {
+  width: 100px; }
+
 /*Carrito*/
 main .main__card {
   background-image: url(../../public/img/fondo-cartera.png); }
