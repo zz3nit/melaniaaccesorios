@@ -20,6 +20,8 @@ buscarProductos.addEventListener('input', () => {
     mostrarProductos(productoEncontrado);
 })
 
+
+/*funcion q manda info de q hubo un error con la pagina*/
 const pantallaError = () => {
     return ` <div class="paginaError">
                 <img src="https://i0.wp.com/www.silocreativo.com/wp-content/uploads/2018/10/error-404-animacion.gif?resize=799%2C406&quality=100&strip=all&ssl=1 width="100%" height="600px" heith alt="">
@@ -28,7 +30,7 @@ const pantallaError = () => {
 }
 
 
-
+/*fetch aplicado con json*/
 fetch('../script/productos.json')
 .then((response) => response.json())
 .then((data)=>{
