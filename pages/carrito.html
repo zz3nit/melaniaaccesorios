@@ -63,64 +63,34 @@
                                     </div>
                                 </div>
                                 <form>
-                                    <span>Nombre del Titular</span>
-                                    <input placeholder="Linda Williams">
-                                    <span>Numero de Tarjeta</span>
-                                    <input placeholder="0125 6780 4567 9909">
+                                    <span >Nombre del Titular</span>
+                                    <input class="inputs" placeholder="Linda Williams" disabled>
+                                    <span >Numero de Tarjeta</span>
+                                    <input class="inputs" type="number" placeholder="0125 6780 4567 9909" disabled>
                                     <div class="row">
-                                        <div class="col-4"><span>Fecha de vencimiento</span>
-                                            <input placeholder="YY/MM">
+                                        <div class="col-4"><span >Fecha de vencimiento</span>
+                                            <input class="inputs" type="date" placeholder="YY/MM" disabled>
                                         </div>
-                                        <div class="col-4"><span>CVV:</span>
-                                            <input id="cvv">
+                                        <div class="col-4"><span >CVV:</span>
+                                            <input class="inputs" type="numbre" id="cvv" disabled>
                                         </div>
                                     </div>
-                                    <input type="checkbox" id="save_card" class="align-left">
-                                    <label for="save_card">Guardar datos de Tarjeta</label>  
+                                    <input type="checkbox" id="save_card" class="align-left" value="tarjeta">
+                                    <label class="pagoCompra" for="save_card">Pagar con Tarjeta</label>  
                                 </form>
-                                <div><input type="checkbox" id="save_card" class="align-left">
-                                    <label class="pagoEfectivo" for="save_card">Pago Efectivo</label>  
+                                <div><input type="checkbox" id="save_card" class="align-left" value="efectivo">
+                                    <label class="pagoCompra">Pago Efectivo</label>  
                                 </div>
                             </div>                        
                         </div>
                         <div class="col-md-5">
                             <div class="right border">
                                 <div  id="tarjeta-body"class="header">Orden de compra</div>
-                                <!-- <div class="row item">
-                                    <div class="col-4 align-self-center"><img class="img-fluid" src="https://i.imgur.com/79M6pU0.png"></div>
-                                    <div class="col-8">
-                                        <div class="row"><b>$ 26.99</b></div>
-                                        <div class="row text-muted">Be Legandary Lipstick-Nude rose</div>
-                                        <div class="row">Qty:1</div>
-                                    </div>
-                                </div>
-                                <div class="row item">
-                                    <div class="col-4 align-self-center"><img class="img-fluid" src="https://i.imgur.com/Ew8NzKr.jpg"></div>
-                                    <div class="col-8">
-                                        <div class="row"><b>$ 19.99</b></div>
-                                        <div class="row text-muted">Be Legandary Lipstick-Sheer Navy Cream</div>
-                                        <div class="row">Qty:1</div>
-                                    </div>
-                                </div>
-                                <hr> -->
-                                <!-- <div class="row lower">
-                                    <div class="col text-left">Subtotal</div>
-                                    <div class="col text-right">$ 46.98</div>
-                                </div>
-                                <div class="row lower">
-                                    <div class="col text-left">Delivery</div>
-                                    <div class="col text-right">Free</div>
-                                </div>
-                                <div class="row lower">
-                                    <div class="col text-left"><b>Total to pay</b></div>
-                                    
-                                </div> -->
+                                
                                 <div><p class="precioProducto" style="font-weight:bolder; color: blue; font-size: large;">Precio Total : $<span id="precio-final"></span></p></div>
                                 <div class="row lower">
-                                    <div class="col text-left"><a href="#"><u>Agregar Cupon de descuento</u></a></div>
-                                </div>
                                 <button id="cancelarCompra" class="btn__cancelar">Cancelar Comprar</button>
-                                <button id="realizarCompra" class="btn__final">Comprar</button>
+                                <button id="realizarCompra" class="btn__final" disabled>Comprar</button>
                                
                             </div>
                         </div>

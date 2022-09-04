@@ -10,8 +10,6 @@ const buscarProductos = document.querySelector ('#buscarProductos');
 const guardarDatos = (clave, valor) => localStorage.setItem (clave, valor);/*variable para agregar en el storage*/
 
 
-
-
 /*funcion para buscar productos*/
 buscarProductos.addEventListener('input', () => {
     const productoEncontrado = productos.filter( ({nombre}) => {
@@ -41,10 +39,6 @@ fetch('../script/productos.json')
     seccionError.innerHTML = pantallaError();
     console.log("Disculpe los inconvenientes, ya estamos solucionando los problemas", error);
 })
-
-
-
-
 
 
 /*funcion para crear las cards de productos*/

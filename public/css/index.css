@@ -78,7 +78,6 @@ footer {
     box-shadow: 0 0 20px #e006ce; }
 
 /*Pages*/
-/*codigo de mati para armar un carrito!!*/
 /*PRODUCTOS*/
 .main__card {
   background-image: url(../../public/img/fondo-cartera.png); }
@@ -283,7 +282,8 @@ input {
   font-size: 0.7rem;
   margin: 4vh 0 1.5vh 0;
   padding: 1.5vh;
-  border-radius: 0; }
+  border-radius: 0;
+  display: disabled; }
 
 .btn__final:focus {
   box-shadow: none;
@@ -340,7 +340,10 @@ input[type=checkbox] {
     background-size: cover;
     background-repeat: no-repeat; }
   .card-top {
-    padding: 0.7rem 1rem; } }
+    padding: 0.7rem 1rem; }
+  /*contacto*/
+  .logo__contacto {
+    width: 75%; } }
 
 @media screen and (max-width: 480px) {
   /*Header*/
@@ -358,6 +361,11 @@ input[type=checkbox] {
     margin-left: 50px;
     position: fixed;
     z-index: 1000; }
+  /*contacto*/
+  .formulario__contacto {
+    height: 75vh;
+    gap: 2rem;
+    background-color: rgba(221, 221, 221, 0.651); }
   /*FOOTER*/
   footer {
     display: flex;
