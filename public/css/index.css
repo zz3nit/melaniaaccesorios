@@ -312,6 +312,11 @@ input[type=checkbox] {
   background-position-x: 95%;
   background-position-y: center; }
 
+.seleccionVencimiento {
+  opacity: 0.3;
+  width: 50%;
+  height: 25%; }
+
 /*Medias*/
 /*medias*/
 @media screen and (max-width: 999px) {

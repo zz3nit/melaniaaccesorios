@@ -64,15 +64,25 @@
                                 </div>
                                 <form>
                                     <span >Nombre del Titular</span>
-                                    <input class="inputs" placeholder="Linda Williams" disabled>
+                                    <input class="inputs" id="inputNombre" placeholder="Linda Williams" disabled>
                                     <span >Numero de Tarjeta</span>
-                                    <input class="inputs" type="number" placeholder="0125 6780 4567 9909" disabled>
+                                    <input class="inputs" type="text" id="inputNumeroTarjeta" maxlength="19" placeholder="0125 6780 4567 9909" disabled>
                                     <div class="row">
-                                        <div class="col-4"><span >Fecha de vencimiento</span>
-                                            <input class="inputs" type="date" placeholder="YY/MM" disabled>
+                                        <div class="col-4"><span >Expira</span>
+                                            <select name="Mes" class="seleccionVencimiento"  id="mesSeleccionado">
+                                                <option class="inputs"  disabled selected>Mes</option>
+                                                <!-- <input class="inputs"  placeholder="Mes" disabled> -->
+                                            </select>
+                                            
+                                        </div>
+                                        <div class="col-4"><span >Expira </span>
+                                            <select name="Año" class="seleccionVencimiento"  id="añoSeleccionado">
+                                                <option disabled selected>Año</option>
+                                            </select>
+                                            <!-- <input class="inputs"  placeholder="Año" disabled> -->
                                         </div>
                                         <div class="col-4"><span >CVV:</span>
-                                            <input class="inputs" type="numbre" id="cvv" disabled>
+                                            <input class="inputs" type="text" maxlength="3" id="cvv" disabled>
                                         </div>
                                     </div>
                                     <input type="checkbox" id="save_card" class="align-left" value="tarjeta">

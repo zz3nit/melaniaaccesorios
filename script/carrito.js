@@ -3,14 +3,9 @@ let carritoDeCompras = [];
 
 
 const contenedorCarrito = document.getElementById ('carrito-contenedor');
-
 const contadorCarrito = document.getElementById ('contador-items');
-
 const precioFinal = document.getElementById ('precio-total');
-
 const botonVaciarCarro = document.querySelector ('#btnVaciarCarrito');
-
-
 
 
 /*funcion para q se agreguen los productos en el carrito*/
@@ -62,20 +57,24 @@ actualizarCarrito();
 
 }
 
-
-function actualizarCarrito () { //funcion para actualizar carrito
+//funcion para actualizar carrito
+function actualizarCarrito () { 
     carritoDeCompras.length > 0 ? document.getElementById ('btnRealizarCompra').style.display = "block" : document.getElementById('btnRealizarCompra').style.display = "none";//ternario
     carritoDeCompras.length > 0 ? document.getElementById ('btnVaciarCarrito').style.display = "block" : document.getElementById('btnVaciarCarrito').style.display = "none";//ternario
     contadorCarrito.innerText = carritoDeCompras.reduce ((acc, el) => acc + el.cantidad, 0);
     precioFinal.innerText = carritoDeCompras.reduce ((acc, el) => acc + (el.precio * el.cantidad), 0);
 }
 
-function realizarCompra () { //boton q redirige a la pagina para finalizar compra o checkout
-    location.href = "./carrito.html"
+
+//boton q redirige a la pagina para finalizar compra o checkout
+function realizarCompra () {
+    setTimeout(() => {
+        location.href = "./carrito.html"
+    }, 500);
 
 }
-
-function vaciarCarrito () { //funcion para vaciar carrito con un solo boton
+//funcion para vaciar carrito con un solo boton
+function vaciarCarrito () { 
     document.getElementById('carrito-contenedor').innerHTML = ""
     carritoDeCompras = [];
     actualizarCarrito();
@@ -86,8 +85,8 @@ function vaciarCarrito () { //funcion para vaciar carrito con un solo boton
 botonVaciarCarro.addEventListener('click', vaciarCarrito);
 
 
-
-function recuperarDatos () { /*funcion q permite traer los objetos del localStorage*/
+/*funcion q permite traer los objetos del localStorage*/
+function recuperarDatos () {
     let productoRecuperado = JSON.parse (localStorage.getItem("listaCompra"))
     if (productoRecuperado) {
         productoRecuperado.forEach (produc=> {
