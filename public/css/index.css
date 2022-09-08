@@ -78,6 +78,11 @@ footer {
     box-shadow: 0 0 20px #e006ce; }
 
 /*Pages*/
+.formulario__contacto {
+  height: 75vh;
+  gap: 2rem;
+  background-color: rgba(221, 221, 221, 0.651); }
+
 /*PRODUCTOS*/
 .main__card {
   background-image: url(../../public/img/fondo-cartera.png); }
@@ -246,7 +251,7 @@ input {
   padding: 2vh; }
 
 .left img {
-  width: 2rem; }
+  width: 5rem; }
 
 .left .col-4 {
   padding-left: 0; }
@@ -283,7 +288,7 @@ input {
   margin: 4vh 0 1.5vh 0;
   padding: 1.5vh;
   border-radius: 0;
-  display: disabled; }
+  opacity: 0.5; }
 
 .btn__final:focus {
   box-shadow: none;
@@ -316,6 +321,16 @@ input[type=checkbox] {
   opacity: 0.3;
   width: 50%;
   height: 25%; }
+
+.eleccion__pago {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: large;
+  font-weight: 500;
+  color: red; }
+
+img.img__logo {
+  padding: 1rem;
+  width: 10rem; }
 
 /*Medias*/
 /*medias*/

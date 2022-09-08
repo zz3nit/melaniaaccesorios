@@ -63,7 +63,7 @@ function mostrarProductos (productos) {
 
     let agregarProducto = document.getElementById(`botonCompra ${id}`)
     agregarProducto.addEventListener('click', () => {
-
+        //agregrue libreria de toastify
         Toastify({
             text: "Producto adherido",
             className: "info",

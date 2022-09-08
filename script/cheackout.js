@@ -41,28 +41,43 @@ function actualizarListaDeCompra () {
 let inputs = document.querySelectorAll('.inputs');
 let checkbox = document.querySelectorAll('#save_card');
 let pagarConEfectivo = document.querySelector('#realizarCompra');
+let select = document.querySelectorAll('.seleccionVencimiento');
+
 
 /*Validacion de las formas de pago*/
+
 checkbox.forEach(check => {
     check.addEventListener('change', ()=>{
         console.log(check.checked);
         if(check.value == 'tarjeta' && check.checked){
             inputs.forEach(input => {
-                input.style.opacity = 1
                 input.disabled = false
+                select.disabled = false
+                input.addEventListener('input', () =>{
+                    input.style.opacity = 1
+                    select.forEach(sel => sel.style.opacity = 1)
+                    
+                    if (input.value !== ""){
+                        pagarConEfectivo.disabled = false
+                        pagarConEfectivo.style.opacity = 1
+                    }else {
+                        pagarConEfectivo.disabled = true
+                        pagarConEfectivo.style.opacity = 0.5
+                        input.disabled = true
+                        select.forEach(sel => sel.style.opacity = 0.3)
+                        select.disabled = true
+                        }
+                    }) 
+                })
+            }if(check.value == 'efectivo' && check.checked){
                 pagarConEfectivo.disabled = false
-            })
-                } else if (check.value == 'efectivo' && check.checked){
-                    pagarConEfectivo.disabled = false
-                }else {
+                pagarConEfectivo.style.opacity = 1
+            }else {
                 pagarConEfectivo.disabled = true
-                inputs.forEach(input => {
-                input.style.opacity = 0.5
-                input.disabled = true 
-            })
-        }
+                pagarConEfectivo.style.opacity = 0.5 
+            }
+        })
     })
-})
 
 //Relleno de select de mes 
 for (let i =1; i <=12; i++) {
@@ -121,37 +136,42 @@ document.querySelector("#cancelarCompra").onclick = () => {
             vaciarlistaDeCompra ()
             setTimeout(()=>{
                 location.href = "./productos.html";
-            }, 3000);
+            }, 2500);
+            
         }  
     })
 }
 
-document.querySelector("#realizarCompra").onclick = () => {
-  
-    Swal.fire({
-        title: 'Quieres realizar tu compra',
-        text: "No podras revertir esta accion!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Realizar Compra!'
-    }).then((result) => {
-        if (result.isConfirmed) {
-        Swal.fire(
-            '',
-            'Gracias por comprar en MelaniaAccesorios',
-            'success')
-            vaciarlistaDeCompra ()
 
-            setTimeout(()=>{
-                location.href = "./productos.html";
-            }, 3000);
+
+    document.querySelector("#realizarCompra").onclick = () => {
+        Swal.fire({
+            title: 'Quieres realizar tu compra',
+            text: "No podras revertir esta accion!",
+            imageUrl: 'https://media2.giphy.com/media/72EjRhsNqkzDiwE6TC/giphy.gif?cid=ecf05e477gw15j07un1tow4ria3a0gen9myqm1x1t6u4ptp4&rid=giphy.gif&ct=g',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: '',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Realizar Compra!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+            Swal.fire(
+                'Su pedido esta siendo preparado',
+                'Gracias por comprar en MelaniaAccesorios',
+                'success')
+                vaciarlistaDeCompra ()
+                setTimeout(()=>{
+                    location.href = "./productos.html";
+                }, 2500);          
+            }
+        })   
         
-        }
-    })   
-    
-}   
+    } 
+
+
 
 /*funcion para cancelar compra*/
 function vaciarlistaDeCompra (){
@@ -163,7 +183,3 @@ function vaciarlistaDeCompra (){
 }
 
 
-//  setTimeout(()=>{
-//      `<img width ="100%" src="../public/img/cartoon-snail-loading-loading-gif-animation_2734139.png!bw340" onload="loadImage()" `
-//  }, 3000)
-// // loadImage();

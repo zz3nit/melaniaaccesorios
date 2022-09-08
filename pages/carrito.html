@@ -69,20 +69,20 @@
                                     <input class="inputs" type="text" id="inputNumeroTarjeta" maxlength="19" placeholder="0125 6780 4567 9909" disabled>
                                     <div class="row">
                                         <div class="col-4"><span >Expira</span>
-                                            <select name="Mes" class="seleccionVencimiento"  id="mesSeleccionado">
+                                            <select name="Mes" class="seleccionVencimiento"  id="mesSeleccionado" >
                                                 <option class="inputs"  disabled selected>Mes</option>
                                                 <!-- <input class="inputs"  placeholder="Mes" disabled> -->
                                             </select>
                                             
                                         </div>
                                         <div class="col-4"><span >Expira </span>
-                                            <select name="Año" class="seleccionVencimiento"  id="añoSeleccionado">
+                                            <select name="Año" class="seleccionVencimiento"  id="añoSeleccionado" >
                                                 <option disabled selected>Año</option>
                                             </select>
                                             <!-- <input class="inputs"  placeholder="Año" disabled> -->
                                         </div>
                                         <div class="col-4"><span >CVV:</span>
-                                            <input class="inputs" type="text" maxlength="3" id="cvv" disabled>
+                                            <input class="inputs" type="password" maxlength="3" id="cvv" disabled>
                                         </div>
                                     </div>
                                     <input type="checkbox" id="save_card" class="align-left" value="tarjeta">
@@ -90,6 +90,10 @@
                                 </form>
                                 <div><input type="checkbox" id="save_card" class="align-left" value="efectivo">
                                     <label class="pagoCompra">Pago Efectivo</label>  
+                                </div>
+                                <div>
+                                    <img class="img__pago" src="../public/img/giphy.gif"  alt="">
+                                    <p class="eleccion__pago">ELIJA SU METODO DE PAGO!!</p>
                                 </div>
                             </div>                        
                         </div>
@@ -101,7 +105,7 @@
                                 <div class="row lower">
                                 <button id="cancelarCompra" class="btn__cancelar">Cancelar Comprar</button>
                                 <button id="realizarCompra" class="btn__final" disabled>Comprar</button>
-                               
+                                
                             </div>
                         </div>
                     </div>
@@ -142,9 +146,8 @@
         crossorigin="anonymous"></script>
 </body>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<!-- <script src="sweetalert2.min.js"></script> -->
+
 <script src="../script/array.js"></script>
-<script src="../script/carrito.js"></script>
 <script src="../script/cheackout.js"></script>
 
 </html>
