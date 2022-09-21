@@ -164,7 +164,7 @@ document.querySelector("#cancelarCompra").onclick = () => {
                 'success')
                 vaciarlistaDeCompra ()
                 setTimeout(()=>{
-                    location.href = "./productos.html";
+                    location.href = "https://zz3nit.github.io/melaniaaccesorios/pages/carrito.html";
                 }, 2500);          
             }
         })   

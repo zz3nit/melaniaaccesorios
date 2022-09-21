@@ -34,7 +34,7 @@ function verificar()
             let loading = document.querySelector('#loading');
             loading.innerHTML = `<img width="250px" src="https://img.pikbest.com/png-images/20190918/cartoon-snail-loading-loading-gif-animation_2734139.png!bw340">`
             setTimeout(()=>{
-            location.href = '../pages/productos.html'
+            location.href = 'https://zz3nit.github.io/melaniaaccesorios/pages/productos.html'
         },3000);
         }
         else

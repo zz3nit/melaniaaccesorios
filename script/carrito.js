@@ -69,7 +69,7 @@ function actualizarCarrito () {
 //boton q redirige a la pagina para finalizar compra o checkout
 function realizarCompra () {
     setTimeout(() => {
-        location.href = "./carrito.html"
+        location.href = "https://zz3nit.github.io/melaniaaccesorios/pages/carrito.html"
     }, 500);
 
 }
